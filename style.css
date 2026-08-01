@@ -1,41 +1,93 @@
-/* ===========================
-   GOOGLE FONT STYLING
-=========================== */
+/* ==========================================
+THE BEST THING ACCENTURE EVER GAVE ME
+Andy Edition
+========================================== */
 
 *{
-    margin:0;
-    padding:0;
-    box-sizing:border-box;
+
+margin:0;
+
+padding:0;
+
+box-sizing:border-box;
+
 }
 
 html{
-    scroll-behavior:smooth;
+
+scroll-behavior:smooth;
+
 }
 
 body{
-    font-family:'Poppins',sans-serif;
-    overflow-x:hidden;
-    color:white;
-    background:linear-gradient(-45deg,#ffd6e8,#ffc2d1,#ffb3c6,#f8bbd0,#ffe5ec);
-    background-size:400% 400%;
-    animation:gradient 12s ease infinite;
-}
 
-/* Animated Background */
+font-family:'Poppins',sans-serif;
 
-@keyframes gradient{
+background:#0d1027;
 
-0%{background-position:0% 50%;}
+color:white;
 
-50%{background-position:100% 50%;}
+overflow-x:hidden;
 
-100%{background-position:0% 50%;}
+line-height:1.8;
 
 }
 
-/* ===========================
-   HERO
-=========================== */
+/* ==========================
+BACKGROUND
+========================== */
+
+.stars{
+
+position:fixed;
+
+top:0;
+
+left:0;
+
+width:100%;
+
+height:100%;
+
+background:
+
+radial-gradient(circle at 15% 20%,rgba(255,255,255,.9) 1px,transparent 2px),
+
+radial-gradient(circle at 40% 60%,rgba(255,255,255,.8) 2px,transparent 3px),
+
+radial-gradient(circle at 70% 30%,rgba(255,255,255,.9) 1px,transparent 2px),
+
+radial-gradient(circle at 85% 70%,rgba(255,255,255,.7) 2px,transparent 3px),
+
+radial-gradient(circle at 60% 80%,rgba(255,255,255,.8) 2px,transparent 3px);
+
+background-size:350px 350px;
+
+animation:starsMove 60s linear infinite;
+
+z-index:-2;
+
+}
+
+@keyframes starsMove{
+
+0%{
+
+transform:translateY(0);
+
+}
+
+100%{
+
+transform:translateY(-500px);
+
+}
+
+}
+
+/* ==========================
+HERO
+========================== */
 
 .hero{
 
@@ -47,487 +99,679 @@ justify-content:center;
 
 align-items:center;
 
-padding:20px;
+padding:40px;
+
+position:relative;
+
+background:
+
+linear-gradient(
+
+180deg,
+
+rgba(20,18,45,.92),
+
+rgba(44,29,73,.88)
+
+),
+
+url("https://images.unsplash.com/photo-1500530855697-b586d89ba3ee?auto=format&fit=crop&w=1800&q=80");
+
+background-size:cover;
+
+background-position:center;
 
 }
 
-.glass-card{
+.overlay{
 
-width:90%;
+position:absolute;
 
-max-width:700px;
+inset:0;
 
-padding:50px;
+background:rgba(15,10,35,.45);
+
+}
+
+.hero-content{
+
+position:relative;
+
+max-width:850px;
 
 text-align:center;
 
+padding:60px;
+
+background:rgba(255,255,255,.08);
+
+backdrop-filter:blur(18px);
+
+border:1px solid rgba(255,255,255,.12);
+
 border-radius:30px;
 
-background:rgba(255,255,255,.25);
-
-backdrop-filter:blur(20px);
-
-box-shadow:0 20px 50px rgba(0,0,0,.15);
-
-border:1px solid rgba(255,255,255,.4);
-
-animation:floatCard 4s ease-in-out infinite;
+box-shadow:0 25px 60px rgba(0,0,0,.35);
 
 }
 
-@keyframes floatCard{
+.small-text{
 
-0%{transform:translateY(0);}
+letter-spacing:4px;
 
-50%{transform:translateY(-12px);}
+text-transform:uppercase;
 
-100%{transform:translateY(0);}
+font-size:13px;
 
-}
+opacity:.8;
 
-.glass-card h3{
-
-font-size:18px;
-
-color:#b03060;
-
-margin-bottom:10px;
+margin-bottom:20px;
 
 }
 
-.glass-card h1{
+.hero h1{
 
-font-family:'Great Vibes',cursive;
+font-family:'Playfair Display',serif;
 
-font-size:5rem;
+font-size:64px;
 
-color:#ff4d8d;
+line-height:1.2;
 
-margin-bottom:10px;
+margin-bottom:30px;
 
 }
 
 .subtitle{
 
-font-size:20px;
+font-size:22px;
 
-color:#6d214f;
+max-width:700px;
 
-margin-bottom:35px;
+margin:auto;
+
+margin-bottom:40px;
+
+color:#ece7ff;
 
 }
 
-/* ===========================
-   BUTTONS
-=========================== */
-
 button{
 
-padding:18px 45px;
+padding:18px 42px;
+
+font-size:18px;
 
 border:none;
 
 border-radius:50px;
 
-font-size:18px;
-
-font-weight:bold;
-
 cursor:pointer;
 
-background:#ff4d8d;
+background:linear-gradient(135deg,#8b5cf6,#c084fc);
 
 color:white;
 
+font-weight:600;
+
 transition:.35s;
 
-box-shadow:0 10px 30px rgba(255,77,141,.35);
+box-shadow:0 12px 30px rgba(139,92,246,.35);
 
 }
 
 button:hover{
 
-transform:translateY(-5px) scale(1.05);
+transform:translateY(-5px);
 
-background:#ff2d75;
+box-shadow:0 20px 40px rgba(139,92,246,.45);
 
 }
 
-/* ===========================
+/* ==========================
 LETTER
-=========================== */
+========================== */
 
-.hidden{
+#letter{
 
-display:none;
+padding:120px 8%;
 
 }
 
-.letter{
+.letter-card{
 
-width:90%;
+max-width:950px;
 
-max-width:900px;
+margin:auto;
 
-margin:80px auto;
+padding:70px;
 
-background:white;
+background:rgba(255,255,255,.08);
 
-color:#555;
+backdrop-filter:blur(18px);
 
-padding:60px;
+border-radius:30px;
 
-border-radius:25px;
+border:1px solid rgba(255,255,255,.12);
 
-box-shadow:0 20px 60px rgba(0,0,0,.15);
+box-shadow:0 25px 60px rgba(0,0,0,.25);
 
-line-height:2;
+}
+
+.letter-top{
+
+display:flex;
+
+align-items:center;
+
+gap:18px;
+
+margin-bottom:35px;
+
+}
+
+.letter-top span{
+
+font-size:40px;
+
+}
+
+.letter-card h2{
+
+font-family:'Playfair Display',serif;
+
+font-size:42px;
+
+}
+
+.letter-card h3{
+
+font-family:'Caveat',cursive;
+
+font-size:42px;
+
+text-align:center;
+
+margin:35px 0;
+
+color:#d8b4fe;
+
+}
+
+.letter-card p{
 
 font-size:19px;
 
-position:relative;
+margin-bottom:22px;
+
+color:#f2efff;
+
+}
+/* ==========================================
+JOURNEY SECTION
+========================================== */
+
+#journey{
+
+padding:120px 8%;
 
 }
 
-.letter::before{
-
-content:"💌";
-
-position:absolute;
-
-top:-30px;
-
-left:50%;
-
-transform:translateX(-50%);
-
-font-size:50px;
-
-}
-
-.letter h2{
+.section-title{
 
 text-align:center;
 
-color:#ff2d75;
-
-margin-bottom:30px;
-
-font-family:'Great Vibes',cursive;
-
-font-size:3rem;
+margin-bottom:80px;
 
 }
 
-.letter h3{
+.section-title h1{
 
-margin-top:30px;
+font-family:'Playfair Display',serif;
 
-color:#ff2d75;
+font-size:56px;
 
-text-align:center;
-
-}
-
-.letter h4{
-
-margin-top:10px;
-
-text-align:center;
+margin-bottom:20px;
 
 }
 
-.letter h5{
+.section-title p{
 
-margin-top:25px;
+font-size:20px;
 
-text-align:right;
-
-color:#ff2d75;
+opacity:.85;
 
 }
 
-/* ===========================
-GALLERY
-=========================== */
-
-.gallery-title{
-
-text-align:center;
-
-font-size:2.8rem;
-
-margin-top:70px;
-
-margin-bottom:40px;
-
-font-family:'Great Vibes',cursive;
-
-color:white;
-
-}
+/* ==========================================
+PHOTO GALLERY
+========================================== */
 
 .gallery{
 
 display:grid;
 
-grid-template-columns:repeat(auto-fit,minmax(260px,1fr));
+grid-template-columns:repeat(2,1fr);
 
-gap:30px;
-
-width:90%;
+gap:70px 50px;
 
 max-width:1200px;
 
 margin:auto;
 
-padding-bottom:70px;
-
 }
 
-.gallery img{
+.photo{
 
-width:100%;
+background:rgba(255,255,255,.08);
 
-height:320px;
+backdrop-filter:blur(14px);
 
-object-fit:cover;
+padding:18px;
 
-border-radius:20px;
+border-radius:24px;
 
-border:10px solid white;
+border:1px solid rgba(255,255,255,.12);
 
-box-shadow:0 15px 35px rgba(0,0,0,.2);
+box-shadow:0 20px 45px rgba(0,0,0,.25);
 
 transition:.4s;
 
-transform:rotate(-2deg);
+}
+
+.photo:hover{
+
+transform:translateY(-10px) scale(1.02);
+
+box-shadow:0 30px 60px rgba(139,92,246,.30);
 
 }
 
-.gallery img:nth-child(even){
+.photo img{
 
-transform:rotate(2deg);
+width:100%;
+
+height:420px;
+
+object-fit:contain;
+
+background:#11152f;
+
+border-radius:16px;
+
+display:block;
 
 }
 
-.gallery img:hover{
+.photo span{
 
-transform:scale(1.06) rotate(0deg);
+display:block;
 
-}
+margin-top:18px;
 
-/* ===========================
-MUSIC
-=========================== */
+font-family:'Caveat',cursive;
 
-#musicSection{
+font-size:30px;
 
 text-align:center;
 
-padding:50px;
+color:#f5e8ff;
+
+line-height:1.5;
 
 }
 
-/* ===========================
-END
-=========================== */
+/* ==========================================
+QUOTE CARDS
+========================================== */
 
-#endSection{
+.quote{
 
-padding:80px 20px;
+grid-column:1/-1;
+
+padding:55px;
 
 text-align:center;
 
-}
+font-size:30px;
 
-#endSection h2{
+font-family:'Caveat',cursive;
 
-font-size:2rem;
+background:linear-gradient(135deg,#7c3aed,#a855f7);
 
-line-height:1.8;
+border-radius:24px;
+
+box-shadow:0 20px 40px rgba(124,58,237,.35);
 
 color:white;
 
+line-height:1.8;
+
 }
 
-/* ===========================
+.special{
+
+font-size:36px;
+
+font-weight:bold;
+
+letter-spacing:1px;
+
+}
+
+/* ==========================================
+FINAL LETTER
+========================================== */
+
+#finalLetter{
+
+padding:140px 8%;
+
+}
+
+.end{
+
+text-align:center;
+
+}
+
+.end h1{
+
+font-family:'Playfair Display',serif;
+
+font-size:54px;
+
+margin-bottom:35px;
+
+}
+
+.end p{
+
+font-size:20px;
+
+margin-bottom:25px;
+
+}
+
+/* ==========================================
+ENDING
+========================================== */
+
+#ending{
+
+padding:160px 8%;
+
+background:linear-gradient(
+
+180deg,
+
+transparent,
+
+rgba(139,92,246,.10),
+
+rgba(12,14,35,1)
+
+);
+
+}
+
+.ending-card{
+
+max-width:950px;
+
+margin:auto;
+
+text-align:center;
+
+padding:80px;
+
+background:rgba(255,255,255,.06);
+
+backdrop-filter:blur(20px);
+
+border-radius:30px;
+
+border:1px solid rgba(255,255,255,.10);
+
+box-shadow:0 30px 70px rgba(0,0,0,.35);
+
+}
+
+.fade-text{
+
+font-size:24px;
+
+opacity:.85;
+
+margin-bottom:25px;
+
+}
+
+.ending-card h3{
+
+font-family:'Playfair Display',serif;
+
+font-size:42px;
+
+margin-bottom:45px;
+
+}
+
+.pause-line{
+
+width:120px;
+
+height:3px;
+
+background:#c084fc;
+
+margin:40px auto;
+
+border-radius:10px;
+
+}
+
+.reveal{
+
+margin:70px 0;
+
+}
+
+.reveal h1{
+
+font-family:'Playfair Display',serif;
+
+font-size:56px;
+
+margin-bottom:15px;
+
+}
+
+.reveal h2{
+
+font-family:'Caveat',cursive;
+
+font-size:90px;
+
+color:#d8b4fe;
+
+margin-bottom:15px;
+
+text-shadow:0 0 25px rgba(216,180,254,.8);
+
+}
+
+.message{
+
+font-size:21px;
+
+margin-bottom:24px;
+
+line-height:2;
+
+}
+
+.final-quote{
+
+margin:60px 0;
+
+font-family:'Caveat',cursive;
+
+font-size:42px;
+
+color:#f3d4ff;
+
+}
+
+.ending-line{
+
+font-size:20px;
+
+line-height:2;
+
+margin-top:30px;
+
+}
+
+.signature{
+
+margin-top:60px;
+
+font-family:'Caveat',cursive;
+
+font-size:38px;
+
+color:#f5d8ff;
+
+}
+
+/* ==========================================
 FOOTER
-=========================== */
+========================================== */
 
 footer{
 
-padding:50px;
+padding:60px 30px;
 
 text-align:center;
 
 font-size:18px;
 
-opacity:.9;
+color:#cfc8ef;
+
+background:#090b18;
 
 }
 
-/* ===========================
-HEARTS
-=========================== */
+/* ==========================================
+SCROLL ANIMATION
+========================================== */
 
-.heart{
-
-position:fixed;
-
-bottom:-50px;
-
-font-size:25px;
-
-animation:rise linear forwards;
-
-pointer-events:none;
-
-z-index:999;
-
-}
-
-@keyframes rise{
-
-0%{
-
-transform:translateY(0);
-
-opacity:1;
-
-}
-
-100%{
-
-transform:translateY(-120vh);
+.hidden{
 
 opacity:0;
 
-}
+transform:translateY(60px);
+
+transition:1s ease;
 
 }
 
-/* ===========================
-MOBILE
-=========================== */
+.show{
 
-@media(max-width:768px){
+opacity:1;
 
-.glass-card h1{
+transform:translateY(0);
 
-font-size:3.5rem;
+}
+
+/* ==========================================
+RESPONSIVE
+========================================== */
+
+@media(max-width:900px){
+
+.hero h1{
+
+font-size:42px;
 
 }
 
 .subtitle{
 
-font-size:17px;
+font-size:18px;
 
 }
 
-.letter{
+.hero-content{
+
+padding:40px 25px;
+
+}
+
+.letter-card,
+
+.ending-card{
+
+padding:40px 25px;
+
+}
+
+.letter-card h2{
+
+font-size:34px;
+
+}
+
+.letter-card h3{
+
+font-size:34px;
+
+}
+
+.section-title h1{
+
+font-size:42px;
+
+}
+
+.gallery{
+
+grid-template-columns:1fr;
+
+gap:45px;
+
+}
+
+.photo img{
+
+height:300px;
+
+}
+
+.quote{
+
+font-size:24px;
 
 padding:35px;
 
-font-size:17px;
+}
+
+.reveal h1{
+
+font-size:40px;
 
 }
 
-.letter h2{
+.reveal h2{
 
-font-size:2.2rem;
-
-}
-
-.gallery img{
-
-height:250px;
+font-size:60px;
 
 }
 
-button{
+.signature{
 
-width:90%;
-
-}
+font-size:30px;
 
 }
-
-/* ===========================
-   MUSIC CARD
-=========================== */
-
-.music-card{
-
-    width:90%;
-    max-width:750px;
-
-    margin:70px auto;
-
-    background:rgba(255,255,255,.25);
-
-    backdrop-filter:blur(15px);
-
-    border-radius:30px;
-
-    padding:50px;
-
-    text-align:center;
-
-    box-shadow:0 20px 40px rgba(0,0,0,.15);
-
-}
-
-.music-card h2{
-
-    color:white;
-
-    margin-bottom:20px;
-
-    font-family:'Great Vibes',cursive;
-
-    font-size:3rem;
-
-}
-
-.music-card p{
-
-    color:white;
-
-    font-size:18px;
-
-    line-height:1.8;
-
-    margin-bottom:30px;
-
-}
-
-.music-button{
-
-    display:inline-block;
-
-    text-decoration:none;
-
-    padding:18px 40px;
-
-    background:white;
-
-    color:#ff2d75;
-
-    font-weight:bold;
-
-    border-radius:50px;
-
-    transition:.3s;
-
-    box-shadow:0 10px 25px rgba(0,0,0,.15);
-
-}
-
-.music-button:hover{
-
-    transform:scale(1.08);
-
-    background:#ffeff6;
 
 }
