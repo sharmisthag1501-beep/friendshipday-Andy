@@ -1,192 +1,290 @@
-// ===============================
-// Friendship Day Website
-// For Andy ❤️
-// ===============================
+// ======================================
+// THE BEST THING ACCENTURE EVER GAVE ME
+// Andy Edition
+// ======================================
 
-const openBtn = document.getElementById("openBtn");
-const letterSection = document.getElementById("letterSection");
-const gallerySection = document.getElementById("gallerySection");
-const musicSection = document.getElementById("musicSection");
-const endSection = document.getElementById("endSection");
+// ----------------------------
+// Smooth Navigation
+// ----------------------------
 
-openBtn.addEventListener("click", () => {
+const startBtn = document.getElementById("startJourney");
 
-    openBtn.innerHTML = "💖 Opening...";
+if(startBtn){
 
-    setTimeout(() => {
+startBtn.addEventListener("click",()=>{
 
-        letterSection.classList.remove("hidden");
-        gallerySection.classList.remove("hidden");
-        musicSection.classList.remove("hidden");
-        endSection.classList.remove("hidden");
+document.getElementById("letter").scrollIntoView({
 
-        letterSection.scrollIntoView({
-            behavior: "smooth"
-        });
-
-    }, 800);
+behavior:"smooth"
 
 });
 
-
-// ===============================
-// Floating Hearts
-// ===============================
-
-function createHeart(){
-
-    const heart = document.createElement("div");
-
-    heart.className = "heart";
-
-    heart.innerHTML = ["💖","💕","💗","🤍","🌸"][
-        Math.floor(Math.random()*5)
-    ];
-
-    heart.style.left = Math.random()*100 + "vw";
-
-    heart.style.fontSize = (18 + Math.random()*25) + "px";
-
-    heart.style.animationDuration =
-        (4 + Math.random()*4) + "s";
-
-    document.body.appendChild(heart);
-
-    setTimeout(()=>{
-        heart.remove();
-    },8000);
+});
 
 }
 
-setInterval(createHeart,350);
+const memoryBtn=document.getElementById("memoryBtn");
 
+if(memoryBtn){
 
-// ===============================
-// Music
-// ===============================
+memoryBtn.addEventListener("click",()=>{
 
+document.getElementById("journey").scrollIntoView({
 
-// ===============================
-// Final Surprise
-// ===============================
-
-const surpriseBtn=document.getElementById("surpriseBtn");
-
-surpriseBtn.addEventListener("click",()=>{
-
-    launchConfetti();
-
-    setTimeout(()=>{
-
-        alert(`💖
-
-Andy,
-
-Thank you for being exactly who you are.
-
-Never change.
-
-The world is brighter because you're in it.
-
-Happy Friendship Day!
-
-Love,
-Sharmistha 🤍`);
-
-    },700);
+behavior:"smooth"
 
 });
 
-
-// ===============================
-// Confetti
-// ===============================
-
-function launchConfetti(){
-
-    for(let i=0;i<180;i++){
-
-        const item=document.createElement("div");
-
-        item.innerHTML=[
-            "💖",
-            "💕",
-            "🌸",
-            "✨",
-            "🎀",
-            "🤍"
-        ][Math.floor(Math.random()*6)];
-
-        item.style.position="fixed";
-
-        item.style.left=Math.random()*100+"vw";
-
-        item.style.top=Math.random()*100+"vh";
-
-        item.style.fontSize=
-        (18+Math.random()*25)+"px";
-
-        item.style.pointerEvents="none";
-
-        item.style.zIndex="9999";
-
-        document.body.appendChild(item);
-
-        item.animate([
-
-            {
-                transform:"translateY(0) rotate(0deg)",
-                opacity:1
-            },
-
-            {
-                transform:"translateY(-200px) rotate(360deg)",
-                opacity:0
-            }
-
-        ],{
-
-            duration:2500,
-
-            easing:"ease-out"
-
-        });
-
-        setTimeout(()=>{
-
-            item.remove();
-
-        },2500);
-
-    }
+});
 
 }
 
+const endingBtn=document.getElementById("endingBtn");
 
-// ===============================
-// Welcome Animation
-// ===============================
+if(endingBtn){
 
-window.onload=()=>{
+endingBtn.addEventListener("click",()=>{
 
-    document.querySelector(".glass-card").animate([
+document.getElementById("ending").scrollIntoView({
 
-        {
-            opacity:0,
-            transform:"translateY(80px)"
-        },
+behavior:"smooth"
 
-        {
-            opacity:1,
-            transform:"translateY(0)"
-        }
+});
 
-    ],{
+});
 
-        duration:1200,
+}
 
-        easing:"ease-out"
+// ----------------------------
+// Scroll Reveal Animation
+// ----------------------------
 
-    });
+const observer=new IntersectionObserver((entries)=>{
 
-};
+entries.forEach(entry=>{
+
+if(entry.isIntersecting){
+
+entry.target.classList.add("show");
+
+}
+
+});
+
+},
+
+{
+
+threshold:0.15
+
+});
+
+document.querySelectorAll(
+
+".photo,.quote,.letter-card,.ending-card,.section-title"
+
+).forEach(el=>{
+
+el.classList.add("hidden");
+
+observer.observe(el);
+
+});
+
+// ----------------------------
+// Floating Photo Animation
+// ----------------------------
+
+document.querySelectorAll(".photo").forEach((photo,index)=>{
+
+photo.animate([
+
+{
+
+transform:"translateY(0px)"
+
+},
+
+{
+
+transform:"translateY(-8px)"
+
+},
+
+{
+
+transform:"translateY(0px)"
+
+}
+
+],
+
+{
+
+duration:4200+(index*250),
+
+iterations:Infinity,
+
+easing:"ease-in-out"
+
+});
+
+});
+
+// ----------------------------
+// Twinkling Stars
+// ----------------------------
+
+function createStar(){
+
+const star=document.createElement("div");
+
+star.className="star";
+
+star.style.left=Math.random()*100+"vw";
+
+star.style.top=Math.random()*100+"vh";
+
+star.style.animationDuration=(2+Math.random()*4)+"s";
+
+star.style.opacity=Math.random();
+
+document.body.appendChild(star);
+
+setTimeout(()=>{
+
+star.remove();
+
+},6000);
+
+}
+
+setInterval(createStar,350);
+
+// ----------------------------
+// CSS for Stars
+// ----------------------------
+
+const style=document.createElement("style");
+
+style.innerHTML=`
+
+.star{
+
+position:fixed;
+
+width:4px;
+
+height:4px;
+
+border-radius:50%;
+
+background:white;
+
+pointer-events:none;
+
+z-index:-1;
+
+box-shadow:
+
+0 0 10px white,
+
+0 0 20px #d8b4fe,
+
+0 0 35px #c084fc;
+
+animation:twinkle ease-in-out infinite;
+
+}
+
+@keyframes twinkle{
+
+0%{
+
+transform:scale(.2);
+
+opacity:0;
+
+}
+
+50%{
+
+transform:scale(1);
+
+opacity:1;
+
+}
+
+100%{
+
+transform:scale(.2);
+
+opacity:0;
+
+}
+
+}
+
+`;
+
+document.head.appendChild(style);
+
+// ----------------------------
+// Typewriter Effect
+// ----------------------------
+
+const reveal=document.querySelector(".reveal h2");
+
+if(reveal){
+
+const original=reveal.textContent;
+
+reveal.textContent="";
+
+let i=0;
+
+function typing(){
+
+if(i<original.length){
+
+reveal.textContent+=original.charAt(i);
+
+i++;
+
+setTimeout(typing,140);
+
+}
+
+}
+
+const revealObserver=new IntersectionObserver((entries)=>{
+
+entries.forEach(entry=>{
+
+if(entry.isIntersecting){
+
+typing();
+
+revealObserver.disconnect();
+
+}
+
+});
+
+},
+
+{
+
+threshold:0.7
+
+});
+
+revealObserver.observe(reveal);
+
+}
+
+// ----------------------------
+// Console Message
+// ----------------------------
+
+console.log("The Best Thing Accenture Ever Gave Me 💜");
